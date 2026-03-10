@@ -2,16 +2,13 @@ import api from './api';
 
 const authService = {
   login: async (email, password) => {
-      const response = await api.post('/login', { email, password });
+  const response = await api.post('/login', { email, password });
 
-      const data = response.data;
 
-      // store authentication data
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+  // store authentication data
 
-      return data;
-    },
+  return response.data;
+},
 
   createUser: async (userData) => {
     const response = await api.post('/create-user', userData);
