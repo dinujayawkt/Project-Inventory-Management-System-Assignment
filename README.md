@@ -6,6 +6,10 @@ Full-stack inventory management application with:
 - Backend: Laravel 12 (API), Sanctum authentication
 - Database: PostgreSQL (configured in server .env)
 
+## Deployment
+
+- Live application: https://optimistic-rejoicing-production.up.railway.app/login
+
 ## Project Structure
 
 - client: Next.js frontend application
@@ -43,21 +47,13 @@ cd assignment
 ### 2. Setup the backend (Laravel)
 
 ```bash
-cd server
-composer install
-cp .env.example .env
-php artisan key:generate
+
 ```
 
 Edit server/.env and provide your PostgreSQL credentials:
 
 ```env
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=your_database
-DB_USERNAME=your_user
-DB_PASSWORD=your_password
+
 ```
 
 Run migrations:
@@ -69,8 +65,7 @@ php artisan migrate
 Optional: create default admin user:
 
 ```bash
-php artisan serve
-# open http://127.0.0.1:8000/api/create-admin once
+
 ```
 
 Default admin from helper route:
@@ -90,7 +85,6 @@ npm install
 Create client/.env.local with:
 
 ```env
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api
 ```
 
 ### 4. Run both apps
@@ -109,10 +103,7 @@ cd client
 npm run dev
 ```
 
-Open:
 
-- Frontend: http://localhost:3000
-- API base: http://127.0.0.1:8000/api
 
 ## Useful Commands
 
