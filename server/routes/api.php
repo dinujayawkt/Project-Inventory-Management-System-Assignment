@@ -7,6 +7,8 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\BorrowRecordController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ActivityLogController;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 Route::post('/login',[AuthController::class,'login']);
 
@@ -28,4 +30,16 @@ Route::middleware('auth:sanctum')->group(function(){
 
 Route::get('/test', function () {
     return "API working";
+});
+
+
+Route::get('/create-admin', function () {
+    $user = User::create([
+        'name' => 'Admin',
+        'email' => 'admin@test.com',
+        'password' => Hash::make('123456'),
+        'role' => 'admin'
+    ]);
+
+    return $user;
 });
