@@ -47,31 +47,17 @@ cd assignment
 ### 2. Setup the backend (Laravel)
 
 ```bash
-
-```
-
-Edit server/.env and provide your PostgreSQL credentials:
-
-```env
-
-```
-
-Run migrations:
-
-```bash
-php artisan migrate
-```
-
-Optional: create default admin user:
-
-```bash
-
+cd server
+composer install
+cp .env.example .env
+php artisan key:generate
 ```
 
 Default admin from helper route:
 
 - email: admin@test.com
 - password: 123456
+
 
 ### 3. Setup the frontend (Next.js)
 
