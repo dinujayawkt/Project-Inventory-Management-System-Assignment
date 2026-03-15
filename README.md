@@ -9,6 +9,7 @@ Full-stack inventory management application with:
 ## Deployment
 
 - Live application: https://optimistic-rejoicing-production.up.railway.app/login
+- For testings - admin@test.com | 123456
 
 ## Project Structure
 
